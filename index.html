@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartilha: reconhecimento de pai ou mãe de coração no cartório</title>
+<style>
+  :root { --verde:#1F4E5F; --terra:#C8553D; --creme:#FFF6EA; --mostarda:#F2B544; --borda:#ecdcc4; --texto:#2b2b2b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Helvetica Neue", Arial, "Liberation Sans", "DejaVu Sans", sans-serif; background: var(--creme); color: var(--texto); line-height: 1.55; font-size: 17px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 18px; }
+  h1, h2, h3 { font-family: Georgia, "DejaVu Serif", serif; color: var(--verde); line-height: 1.2; }
+
+  header { background: var(--verde); color: #fff; padding: 34px 0 44px; position: relative; }
+  header::after { content:""; position:absolute; left:0; right:0; bottom:-18px; height:36px; background:var(--verde); border-radius:0 0 50% 50% / 0 0 100% 100%; }
+  .selo { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--mostarda); font-weight: 700; margin-bottom: 10px; }
+  header h1 { color:#fff; font-size: 32px; }
+  header h1 em { font-style: normal; color: var(--mostarda); }
+  header p { margin-top: 14px; font-size: 18px; opacity: .95; }
+
+  nav { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 8px; }
+  nav a { font-size: 14px; font-weight: 700; text-decoration: none; color: var(--verde); background: #fff; border: 1px solid var(--borda); border-radius: 30px; padding: 6px 14px; }
+
+  section { margin-top: 38px; }
+  h2 { font-size: 25px; margin-bottom: 12px; }
+  h3 { font-size: 19px; margin: 18px 0 6px; }
+  p + p { margin-top: 10px; }
+
+  .card { background:#fff; border:1px solid var(--borda); border-radius: 14px; padding: 16px 18px; }
+  .resumo { background: var(--mostarda); border-radius: 14px; padding: 18px; color:#3a2a00; }
+  .resumo h2 { color:#3a2a00; font-size: 21px; }
+  .resumo ul { padding-left: 20px; }
+  .resumo li + li { margin-top: 6px; }
+
+  ul.marcas { list-style:none; }
+  ul.marcas li { position:relative; padding-left: 22px; margin-top: 8px; }
+  ul.marcas li::before { content:""; position:absolute; left:2px; top:.62em; width:9px; height:9px; border-radius:50%; background: var(--terra); }
+
+  ol.passos { list-style:none; counter-reset: p; }
+  ol.passos li { counter-increment: p; background:#fff; border:1px solid var(--borda); border-radius:14px; padding: 14px 16px 14px 62px; position:relative; margin-top: 10px; }
+  ol.passos li::before { content: counter(p); position:absolute; left:16px; top:14px; width:34px; height:34px; border-radius:50%; background:var(--terra); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  ol.passos b { color: var(--verde); display:block; }
+
+  .grade { display:grid; grid-template-columns: 1fr; gap: 10px; }
+  @media (min-width: 600px) { .grade.dois { grid-template-columns: 1fr 1fr; } }
+
+  .aviso { border-left: 6px solid var(--terra); background:#fff; border-radius: 0 14px 14px 0; padding: 14px 16px; margin-top: 14px; }
+  .aviso b { color: var(--terra); }
+
+  details { background:#fff; border:1px solid var(--borda); border-radius:14px; margin-top: 10px; }
+  summary { cursor:pointer; font-weight:700; color: var(--verde); padding: 14px 16px; list-style: none; position: relative; padding-right: 40px; }
+  summary::-webkit-details-marker { display:none; }
+  summary::after { content:"+"; position:absolute; right:16px; top:10px; font-size: 24px; color: var(--terra); }
+  details[open] summary::after { content:"\2212"; }
+  details .resp { padding: 0 16px 14px; }
+
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px; }
+  .chips i { font-style:normal; font-weight:700; font-size:15px; background: var(--creme); color: var(--verde); border-radius: 30px; padding: 4px 14px; }
+
+  .avalie { background: var(--verde); color:#fff; border-radius: 14px; padding: 20px 18px; text-align:center; }
+  .avalie h2 { color: var(--mostarda); }
+  .botao { display:inline-block; margin-top: 12px; background: var(--mostarda); color:#3a2a00; font-weight:700; text-decoration:none; padding: 12px 24px; border-radius: 30px; }
+
+  footer { margin-top: 40px; background: var(--verde); color:#fff; padding: 26px 0 34px; font-size: 14px; line-height: 1.5; }
+  footer p + p { margin-top: 8px; }
+  footer .peq { opacity:.85; font-size: 13px; }
+
+  .so-impressao { display:none; }
+  @media print {
+    nav, .avalie .botao { display:none; }
+    .so-impressao { display:block; margin-top:8px; font-size:13px; word-break:break-all; }
+    body { background:#fff; font-size:14px; }
+    h2, h3 { break-after: avoid; }
+    section { margin-top: 20px; }
+    details, .card, ol.passos li, .aviso, .resumo, .avalie, footer .wrap { break-inside: avoid; }
+    details .resp { display:block; }
+    ul.marcas li { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="selo">Cartilha informativa · Projeto de extensão</div>
+    <h1>Pai ou mãe de coração <em>também pode ser pai ou mãe no papel</em></h1>
+    <p>Como reconhecer, direto no cartório, a filiação de quem você cria ou de quem criou você, e quando é preciso procurar a Justiça.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <nav aria-label="Atalhos">
+    <a href="#oque">O que é</a>
+    <a href="#cabe">Será que cabe?</a>
+    <a href="#passos">Passo a passo</a>
+    <a href="#documentos">Documentos</a>
+    <a href="#justica">Quando é pela Justiça</a>
+    <a href="#efeitos">O que muda</a>
+    <a href="#duvidas">Dúvidas</a>
+    <a href="#ajuda">Onde buscar ajuda</a>
+  </nav>
+
+  <section>
+    <div class="resumo">
+      <h2>Em um minuto</h2>
+      <ul>
+        <li>Existe um procedimento no <b>Registro Civil de Pessoas Naturais</b> (o cartório de registro de nascimento) para reconhecer a paternidade ou a maternidade <b>socioafetiva</b>, isto é, baseada em afeto e convivência.</li>
+        <li>Vale para quem tem <b>mais de 12 anos</b>. Para crianças menores, o caminho é a Justiça.</li>
+        <li>Quem reconhece precisa ter <b>18 anos ou mais</b> e ser pelo menos <b>16 anos mais velho</b> que o filho ou a filha.</li>
+        <li>Depois de feito, o reconhecimento em regra <b>não pode ser desfeito</b> por arrependimento. Por isso, pense bem antes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="oque">
+    <h2>O que é filiação socioafetiva</h2>
+    <p>É o vínculo de pai, mãe e filho que nasce do cuidado diário, da convivência e do reconhecimento pela família e pela comunidade, e não do laço de sangue. É o caso de muitos padrastos e madrastas, de tios que criaram sobrinhos e de pessoas que sempre trataram alguém como filho ou filha.</p>
+    <h3>O que a lei diz</h3>
+    <ul class="marcas">
+      <li>A Constituição Federal garante a <b>igualdade entre os filhos</b> e proíbe qualquer discriminação na filiação (art. 227, § 6º).</li>
+      <li>O Código Civil afirma que o parentesco é natural ou civil, conforme resulte de consanguinidade <b>ou de outra origem</b> (art. 1.593), e que os filhos, de qualquer origem, têm os mesmos direitos e qualificações (art. 1.596).</li>
+      <li>O Supremo Tribunal Federal decidiu (Tema 622 da Repercussão Geral, RE 898.060/SC) que a paternidade socioafetiva <b>não impede</b> o reconhecimento do pai ou da mãe biológicos ao mesmo tempo, cada vínculo com seus efeitos.</li>
+      <li>O Conselho Nacional de Justiça permite fazer o reconhecimento <b>diretamente no cartório</b> (Provimentos nº 63/2017 e 83/2019, hoje reunidos no Provimento nº 149/2023).</li>
+    </ul>
+  </section>
+
+  <section id="cabe">
+    <h2>Será que o meu caso cabe no cartório?</h2>
+    <p>Em regra, o caminho do cartório é possível quando <b>todas</b> as situações abaixo se confirmam. Esta lista é informativa e não substitui a análise de um profissional.</p>
+    <div class="grade dois" style="margin-top:12px">
+      <div class="card"><b>Idade do filho ou da filha</b><br>Mais de 12 anos.</div>
+      <div class="card"><b>Idade de quem reconhece</b><br>18 anos ou mais, e pelo menos 16 anos mais velho que o filho ou a filha.</div>
+      <div class="card"><b>Afeto comprovável</b><br>Vínculo estável e conhecido: convivência, cuidado, tratamento como filho.</div>
+      <div class="card"><b>Concordância</b><br>O filho ou a filha concorda e, se tem menos de 18 anos, o pai e a mãe que constam no registro também concordam.</div>
+      <div class="card"><b>Sem processo em andamento</b><br>Não há ação de filiação nem de adoção sobre o assunto.</div>
+      <div class="card"><b>Quem pode reconhecer</b><br>Irmãos entre si e avós não podem usar o cartório para isso.</div>
+    </div>
+  </section>
+
+  <section id="passos">
+    <h2>Passo a passo</h2>
+    <ol class="passos">
+      <li><b>Conversem em família</b>Quem vai reconhecer e quem vai ser reconhecido precisam querer o mesmo. Se o filho ou a filha tem menos de 18 anos, conversem também com o pai e a mãe que constam na certidão.</li>
+      <li><b>Separem documentos e provas do vínculo</b>Veja a lista na próxima seção. Quanto mais clara a história de convivência, mais simples tende a ser o procedimento.</li>
+      <li><b>Procurem um Registro Civil de Pessoas Naturais</b>Todos os envolvidos devem comparecer pessoalmente. Peça ao cartório a lista atualizada de exigências e se é possível agendar.</li>
+      <li><b>O cartório confere o vínculo</b>O oficial verifica a documentação e se existe afeto estável e conhecido. Se houver dúvida ou suspeita de fraude, ele pode recusar e encaminhar o caso à Justiça.</li>
+      <li><b>Parecer do Ministério Público, quando exigido</b>Atendidos os requisitos, o cartório envia o pedido ao Ministério Público. Com parecer favorável, o registro é feito e a certidão passa a mostrar o novo vínculo.</li>
+    </ol>
+  </section>
+
+  <section id="documentos">
+    <h2>Documentos e provas</h2>
+    <div class="grade dois">
+      <div class="card">
+        <h3 style="margin-top:0">Documentos básicos</h3>
+        <ul class="marcas">
+          <li>Documento oficial de identidade com foto de quem vai reconhecer.</li>
+          <li>Certidão de nascimento do filho ou da filha.</li>
+          <li>Documentos de identidade dos que precisam concordar (pai e mãe registrais, se o filho for menor de 18 anos).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Provas do afeto</h3>
+        <ul class="marcas">
+          <li>Indicação como responsável na escola.</li>
+          <li>Inclusão como dependente em plano de saúde ou previdência.</li>
+          <li>Moradia na mesma casa.</li>
+          <li>Fotos de eventos e da vida em família.</li>
+          <li>Declarações de testemunhas.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:12px">Não ter algum desses documentos não encerra o caminho: o cartório pode aceitar justificativas e registra como apurou o vínculo. Mesmo assim, confirme as exigências na serventia escolhida, porque a prática pode variar.</p>
+  </section>
+
+  <section id="justica">
+    <h2>Quando o caminho é pela Justiça</h2>
+    <p>O cartório não resolve todos os casos. Em geral, será preciso procurar a Defensoria Pública ou um advogado quando:</p>
+    <ul class="marcas">
+      <li>o filho ou a filha tem <b>menos de 12 anos</b>;</li>
+      <li>o pai ou a mãe que consta no registro <b>não concorda</b> ou não comparece, e o filho é menor de 18 anos;</li>
+      <li>há <b>processo em andamento</b> sobre filiação ou adoção;</li>
+      <li>se quer incluir <b>mais de um pai ou mais de uma mãe</b> socioafetivos: pelo cartório só se inclui um por linha, paterna ou materna, e o registro não pode passar de dois pais e duas mães;</li>
+      <li>o cartório <b>recusa o pedido</b> por dúvida ou suspeita, ou o Ministério Público dá parecer contrário.</li>
+    </ul>
+  </section>
+
+  <section id="efeitos">
+    <h2>O que muda depois do reconhecimento</h2>
+    <p>O filho ou a filha passa a ter os mesmos direitos de qualquer outro filho:</p>
+    <div class="chips"><i>Sobrenome</i><i>Pensão alimentícia</i><i>Plano de saúde</i><i>Benefícios do INSS</i><i>Herança</i></div>
+    <div class="aviso">
+      <b>Direitos e deveres andam juntos.</b> Quem reconhece assume as responsabilidades de pai ou mãe, como o dever de sustento (alimentos) e os efeitos sucessórios, isto é, o filho ou a filha passa a ser herdeiro ou herdeira. Pense nisso antes de decidir.
+    </div>
+    <div class="aviso">
+      <b>Atenção:</b> em regra o reconhecimento é <b>irrevogável</b>. Só pode ser desfeito pela Justiça em casos como vício de vontade, fraude ou simulação. E o reconhecimento feito no cartório <b>não impede</b> que a origem biológica seja discutida depois na Justiça.
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <h2>Dúvidas frequentes</h2>
+    <details><summary>Preciso de advogado para ir ao cartório?</summary><div class="resp">O procedimento não exige advogado. Mesmo assim, o acompanhamento de um profissional é recomendável, principalmente se houver conflito na família ou dúvida sobre os documentos.</div></details>
+    <details><summary>O pai ou a mãe biológicos saem da certidão?</summary><div class="resp">Não. O reconhecimento socioafetivo é somado ao vínculo existente, o que se chama multiparentalidade. O registro respeita o limite de dois pais e duas mães.</div></details>
+    <details><summary>Padrasto ou madrasta podem reconhecer?</summary><div class="resp">Sim, desde que cumpram os requisitos: 18 anos ou mais, diferença de pelo menos 16 anos, vínculo de afeto comprovável e concordância das pessoas exigidas.</div></details>
+    <details><summary>Avós ou irmãos podem reconhecer um neto ou irmão pelo cartório?</summary><div class="resp">Não por essa via. A regra do cartório impede que irmãos entre si e ascendentes (como avós) façam o reconhecimento administrativo. Nesses casos, procure a Defensoria Pública ou um advogado para saber qual medida judicial se aplica.</div></details>
+    <details><summary>O filho ou a filha já é adulto. Também vale?</summary><div class="resp">Vale. Para quem tem 18 anos ou mais, a pessoa reconhecida manifesta a própria vontade, e as exigências de anuência dos pais registrais e de parecer do Ministério Público são, em regra, dispensadas. Confirme no cartório como ele aplica a regra.</div></details>
+    <details><summary>Quanto custa?</summary><div class="resp">Os valores e a eventual gratuidade dependem das regras do cartório e do estado. Pergunte na serventia sobre custos e sobre a possibilidade de gratuidade para quem não pode pagar. Se a situação for de baixa renda, a Defensoria Pública pode orientar.</div></details>
+    <details><summary>Posso me arrepender depois?</summary><div class="resp">Em regra, não. O reconhecimento é irrevogável. Apenas a Justiça pode desfazê-lo, em hipóteses como vício de vontade, fraude ou simulação.</div></details>
+    <details><summary>E se a pessoa que me criou já faleceu?</summary><div class="resp">Esse é um caso para orientação individual, porque envolve herança e prova do vínculo. Procure a Defensoria Pública ou um advogado.</div></details>
+  </section>
+
+  <section id="ajuda">
+    <h2>Onde buscar ajuda</h2>
+    <div class="grade dois">
+      <div class="card"><b>Registro Civil de Pessoas Naturais</b><br>É o cartório onde se faz o pedido. Pode ser feito em qualquer serventia do país, e o cartório informa as exigências e os valores.</div>
+      <div class="card"><b>Defensoria Pública do Estado do Rio de Janeiro</b><br>Orienta e atua gratuitamente para quem não pode pagar um advogado, inclusive nos casos que dependem da Justiça.</div>
+    </div>
+    <div class="aviso">
+      <b>Sobre esta cartilha:</b> o projeto presta orientação informativa e educativa. Não presta consultoria individual, não elabora requerimentos para casos concretos e não substitui advogado, Defensoria Pública ou Registrador. Casos individuais devem ser encaminhados a esses órgãos.
+    </div>
+  </section>
+
+  <section>
+    <div class="avalie">
+      <h2>Ajude a melhorar</h2>
+      <p>Leva menos de um minuto. Não pedimos nome nem dados pessoais.</p>
+      <a class="botao" href="https://docs.google.com/forms/d/e/1FAIpQLSeJ92oPHCR_Q9HYEYlIdAKHqQokIoSoc-iv62auepUTtaKLVA/viewform" target="_blank" rel="noopener" id="botao-avaliacao">Avaliar a cartilha</a>
+      <p class="so-impressao">Link do formulário de avaliação: https://docs.google.com/forms/d/e/1FAIpQLSeJ92oPHCR_Q9HYEYlIdAKHqQokIoSoc-iv62auepUTtaKLVA/viewform</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Universidade Estácio de Sá · Campus Ilha do Governador</b><br>Projeto de extensão da disciplina Direito das Famílias e Sucessões, 2026.</p>
+    <p>Discentes: Aline Alves de Santana, Cristian da Silva Ribeiro, Flavia Gomes, Marcello Leal Reis da Silva, Maria Luiza Alves de Santana e Renê Reis da Costa. Orientação: Profa. Isabel Cristina Ribeiro dos Reis.</p>
+    <p class="peq">Base normativa: Constituição Federal, art. 227, § 6º; Código Civil, arts. 1.593 e 1.596; STF, RE 898.060/SC (Tema 622); Provimento CNJ nº 149/2023 (Código Nacional de Normas - Foro Extrajudicial), que reúne os Provimentos nº 63/2017 e nº 83/2019. Material educativo, sem dados pessoais coletados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
